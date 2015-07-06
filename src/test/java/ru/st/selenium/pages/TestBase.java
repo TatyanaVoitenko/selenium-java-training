@@ -1,4 +1,4 @@
-package ru.st.selenium;
+package ru.st.selenium.pages;
 
 import java.util.concurrent.TimeUnit;
 
