@@ -1,5 +1,7 @@
 package ru.st.selenium;
 
+import java.util.List;
+
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -34,10 +36,13 @@ public class FindFilmTest extends ru.st.selenium.pages.TestBase{
 	   search_field.sendKeys(Keys.ENTER);
 	   wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("movie_cover")));
 	   String  title = driver.findElement(By.className("title")).getText();
-      Assert.assertEquals(title, "Big game"); 
-      driver.findElement(By.linkText("Log out")).click();
-      Alert alert = driver.switchTo().alert();
-      alert.accept();
+       Assert.assertEquals(title, "Big game"); 
+       List<WebElement> elements =driver.findElements(By.xpath("//a[contains(@href,'./?go=movie&id=')]"));
+       int films_count = elements.size();
+       Assert.assertEquals(films_count, 1);
+       driver.findElement(By.linkText("Log out")).click();
+       Alert alert = driver.switchTo().alert();
+       alert.accept();
 
 	   
 	}
