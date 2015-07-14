@@ -26,8 +26,8 @@ public class RemoveFilm extends ru.st.selenium.pages.TestBase {
 		passwordField.clear();
 		passwordField.sendKeys("admin");
 		driver.findElement(By.name("submit")).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@title='My First Film']")));
-		driver.findElement(By.xpath("//img[@title='My First Film']")).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[4]/div/div[2]")));
+		driver.findElement(By.xpath("//a[4]/div/div[2]")).click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[contains(@src,'delete.png')]")));
 		driver.findElement(By.xpath("//img[contains(@src,'delete.png')]")).click();
 		Alert alert = driver.switchTo().alert();

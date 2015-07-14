@@ -7,4 +7,10 @@
 		    <class name="ru.st.selenium.LoginTest"/>
 		</classes>
 	</test>  
+	<test name="Test2">
+		<parameter name="path" value="/"/>
+		<classes>
+		    <class name="ru.st.selenium.FindFilmTest"/>
+		</classes>
+	</test>  
 </suite>
